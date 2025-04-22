@@ -71,7 +71,7 @@ class RetryCosmosDbPartitionedStorage(CosmosDbPartitionedStorage):
         while True:
             try:
                 # Invoke the orignial implementation from 
-                # CosmosDbPartitionedStorage 
+                # CosmosDbPartitionedStorage
                 return await super().write(changes)
             except CosmosAccessConditionFailedError as e:
                 attempt += 1
